@@ -5,7 +5,7 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
   protected int[] yCorners;   
   protected int myColor;   
   protected double myCenterX, myCenterY; //holds center coordinates   
-  protected double myXspeed, myYspeed; //holds the speed of travel in the x and y directions   
+  protected double myDirectionX, myDirectionY; //holds x and y coordinates of the vector for direction of travel   
   protected double myPointDirection; //holds current direction the ship is pointing in degrees    
 
   //Accelerates the floater in the direction it is pointing (myPointDirection)   
@@ -14,19 +14,19 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
     //convert the current direction the floater is pointing to radians    
     double dRadians =myPointDirection*(Math.PI/180);     
     //change coordinates of direction of travel    
-    myXspeed += ((dAmount) * Math.cos(dRadians));    
-    myYspeed += ((dAmount) * Math.sin(dRadians));       
+    myDirectionX += ((dAmount) * Math.cos(dRadians));    
+    myDirectionY += ((dAmount) * Math.sin(dRadians));       
   }   
-  public void turn (double degreesOfRotation)   
+  public void turn (int nDegreesOfRotation)   
   {     
     //rotates the floater by a given number of degrees    
-    myPointDirection+=degreesOfRotation;   
+    myPointDirection+=nDegreesOfRotation;   
   }   
   public void move ()   //move the floater in the current direction of travel
   {      
-    //change the x and y coordinates by myXspeed and myYspeed       
-    myCenterX += myXspeed;    
-    myCenterY += myYspeed;     
+    //change the x and y coordinates by myDirectionX and myDirectionY       
+    myCenterX += myDirectionX;    
+    myCenterY += myDirectionY;     
 
     //wrap around screen    
     if(myCenterX >width)
@@ -73,4 +73,15 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
     rotate(-1*dRadians);
     translate(-1*(float)myCenterX, -1*(float)myCenterY);
   }   
+  public double getX() {return myCenterX;}
+    public double getY() {return myCenterY;}
+    public double getPointDir() {return myPointDirection;}
+    public double getDirX() {return myDirectionX;}
+    public double getDirY() {return myDirectionY;}
+    public void setX(double n) {
+        myCenterX = n;
+    }
+    public void setY(double n) {
+        myCenterY = n;
+    }
 } 
