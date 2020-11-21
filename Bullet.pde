@@ -1,11 +1,11 @@
 public class Bullet extends Floater {
 	private double dRadians;
 	public Bullet() {
-		myCenterX = wilsonian.getX();
-		myCenterY = wilsonian.getY();
-		dRadians = wilsonian.getPointDirection()*(Math.PI/180);
-		myDirectionX = (int)(5 * Math.cos(dRadians) + wilsonian.getDirectionX());
-		myDirectionY = (int)(5 * Math.sin(dRadians) + wilsonian.getDirectionY());
+		myCenterX = bob.getX();
+		myCenterY = bob.getY();
+		dRadians = bob.getPointDirection()*(Math.PI/180);
+		myDirectionX = (int)(5 * Math.cos(dRadians) + bob.getDirectionX());
+		myDirectionY = (int)(5 * Math.sin(dRadians) + bob.getDirectionY());
 	}
 	public void move() {
 		myCenterX += myDirectionX;
