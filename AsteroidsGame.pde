@@ -1,6 +1,6 @@
 //your variable declarations here
 Stars[] theSky = new Stars[500];
-SpaceShip wilsonian = new SpaceShip();
+SpaceShip bob = new SpaceShip();
 // Asteroids[] asteroidians = new Asteroids[50];
 ArrayList <Asteroids> asteroidians = new ArrayList <Asteroids> ();
 ArrayList <Bullet> bulletian = new ArrayList <Bullet> ();
@@ -10,7 +10,7 @@ boolean shoot = false;
 
 
 public void setup() {
-size(700,700);
+size(800,800);
 background(0);
 
 
@@ -25,8 +25,8 @@ asteroidians.get(j).setY((int)(Math.random()*700));
 for(int z =0; z < 1; z++) {
 bulletian.add((z), new Bullet());
 }
-wilsonian.setX(350);
-wilsonian.setY(350);
+bob.setX(350);
+bob.setY(350);
 
 
 }
@@ -40,8 +40,8 @@ public void draw() {
  for(int j = 0; j < asteroidians.size(); j++) {
     asteroidians.get(j).show();
     asteroidians.get(j).move();
-distance = (int)Math.sqrt((wilsonian.getX()-asteroidians.get(j).getX())*(wilsonian.getX()-asteroidians.get(j).getX()) 
-    + (wilsonian.getY()-asteroidians.get(j).getY())*(wilsonian.getY()-asteroidians.get(j).getY()));
+distance = (int)Math.sqrt((bob.getX()-asteroidians.get(j).getX())*(bob.getX()-asteroidians.get(j).getX()) 
+    + (bob.getY()-asteroidians.get(j).getY())*(bob.getY()-asteroidians.get(j).getY()));
     if(distance <= 20) {
       asteroidians.remove(j);
       break;
@@ -69,8 +69,8 @@ distance = (int)Math.sqrt((wilsonian.getX()-asteroidians.get(j).getX())*(wilsoni
  }
  
   }
-  wilsonian.move();
-  wilsonian.show();
+  bob.move();
+  bob.show();
 
 
   }
@@ -79,29 +79,29 @@ distance = (int)Math.sqrt((wilsonian.getX()-asteroidians.get(j).getX())*(wilsoni
 
 public void keyPressed() {
     if(keyCode == LEFT) { // left key
-      wilsonian.rotate(-15);
+      bob.rotate(-15);
     }
     if(keyCode == RIGHT) { //right key
-      wilsonian.rotate(15);
+      bob.rotate(15);
     }
     if(keyCode == 38) { //up key
-      wilsonian.accelerate(.01);
+      bob.accelerate(.01);
     }
     if(keyCode == DOWN) { // down key
-      wilsonian.accelerate(-.01);
+      bob.accelerate(-.01);
     }
 //hyperspace
   if(keyCode == 79) //o key 
   {
     //direction
-    wilsonian.setDirectionX(0);
-    wilsonian.setDirectionY(0);
+    bob.setDirectionX(0);
+    bob.setDirectionY(0);
     //position
 
 
-    wilsonian.setX((int)(Math.random()*700));
-    wilsonian.setY((int)(Math.random()*700));
-    wilsonian.setPointDirection((int)(Math.random()*360));
+    bob.setX((int)(Math.random()*700));
+    bob.setY((int)(Math.random()*700));
+    bob.setPointDirection((int)(Math.random()*360));
 }
 if(keyCode == 32) {
 shoot = true;
