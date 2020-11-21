@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 	<head>
 		<meta charset="utf-8">
-		<title>Asteroids!</title>
+		<title>AsteroidsGame</title>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="styles.css">
 		<script src="processing.js"></script>
 	</head>
 	<body>
 		<header>
-			<h1>Asteroids!</h1>
+			<h1>AsteroidsGame</h1>
 		</header>
 			<section id="content">
-				<canvas id="AsteroidsGame" data-processing-sources="Asteroid.pde AsteroidsGame.pde Floater.pde Spaceship.pde Star.pde Bullet.pde"> </canvas>
+				<canvas id="AsteroidsGame" data-processing-sources="AsteroidsGame.pde Bullet.pde">
+				<canvas id="Bullet" data-processing-sources="Bullet.pde">
+				</canvas>
 		    </section>
 	    <footer>
-		    Arrow keys to move, X for hyperspace, C to shoot
+		    Up Arrow(accelerate), Down Arrow(Decelerate), Right Arrow(Turns right), Left Arrow(Turns left), 'o' key(Hyperspace), 'spacebar'(shoots bullets)
 	    </footer>
 	</body>
 </html>
